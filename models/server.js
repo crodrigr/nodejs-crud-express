@@ -23,7 +23,7 @@ class Server {
 
     routes() {
         this.app.get('/api',(req,res)=>{
-            res.json({
+            res.status(200).json({
                 msg:'get API'
             });
         });
@@ -33,7 +33,7 @@ class Server {
             });
         });
         this.app.post('/api',(req,res)=>{
-            res.json({
+            res.status(201).json({
                 msg:'post API'
             });
         });
