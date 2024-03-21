@@ -22,9 +22,27 @@ class Server {
     }
 
     routes() {
-        this.app.use('/api',(req,res)=>{
-            res.send('Hello word');
+        this.app.get('/api',(req,res)=>{
+            res.json({
+                msg:'get API'
+            });
         });
+        this.app.put('/api',(req,res)=>{
+            res.json({
+                msg:'put API'
+            });
+        });
+        this.app.post('/api',(req,res)=>{
+            res.json({
+                msg:'post API'
+            });
+        });
+        this.app.delete('/api',(req,res)=>{
+            res.json({
+                msg:'delete API'
+            });
+        });
+        
     }
 
     listen(){
@@ -34,8 +52,5 @@ class Server {
     }
    
 }
-
-
-
 
 module.exports = Server;
