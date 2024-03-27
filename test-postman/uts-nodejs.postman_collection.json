@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "0b20e2f4-d55d-46dd-8684-50ebfdf91ff4",
+		"name": "uts-nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11015146"
+	},
+	"item": [
+		{
+			"name": "crear-usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"{{$randomFullName}}\",\n    \"correo\": \"{{$randomEmail}}\",\n    \"password\": \"123456\",\n    \"rol\": \"USER_ROLE\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar-usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/usuarios?desde=0&limitie=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "0"
+						},
+						{
+							"key": "limitie",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actulizar-usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \n            \"nombre\": \"Camilo Rodriguez\",\n            \"correo\": \"crodrigr@hotmail.com\",\n            \"rol\": \"ADMIN_ROLE\",\n            \"estado\": false,\n            \"google\": true,\n            \"password\": \"33333333\"\n    \n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/usuarios/66037c3b22b69c147b00af5c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"66037c3b22b69c147b00af5c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/usuarios/66037c3b22b69c147b00af5c",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"66037c3b22b69c147b00af5c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
